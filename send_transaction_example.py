@@ -1,7 +1,6 @@
 from walletClient import WalletClient
 
 wallet = WalletClient()
-# send transaction
-address = "your address"
-password = 'your pass'
+address = ""
+password =''
 print(wallet.send(to_address=address, amount=1, password=password))
