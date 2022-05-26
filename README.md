@@ -1,10 +1,15 @@
 # kaspadonetPy
+ Python version of kaspadonet for interacting with Kaspa with gRPC.
+ Kaspa is an open-source cryptocurrency, see https://github.com/kaspanet/kaspad for more details.
 
-A RPC client for kaspa network written in python based on protowire documentation 
-https://github.com/kaspanet/kaspad/blob/14b2bcbd8162ffafbcc53f5163cfe92bb3b556d7/infrastructure/network/netadapter/server/grpcserver/protowire/rpc.md#protowire.RPCError
+## Quick install
+1. Clone the repo and setup a virtual Python environment, `python -m venv venv`
+2. Activate it `source venv/bin/activate`
+3. Install the requirements using `pip install -r requirements.txt`
 
-
-Wallet client
-RPC client
-P2P client
-
+## Setup
+1. Run Kaspa in the background `kaspad --uxtoindex` (Linux) or `kaspad.exe /uxtoindex` (Windows).
+2. Make sure it is updated and Accepting blocks.
+3. Run another terminal window for `kaspawallet start-daemon`, this will run on localhost port 8082.
+4. If you need to customize your wallet host and port, copy `.env_example` to `.env` and edit it. 
+5. You can then interact with the Python gRCP services from the wallet, eg: Run `python show_address_example.py`

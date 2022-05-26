@@ -1,12 +1,15 @@
 import protos.kaspawalletd_pb2_grpc as gpb2
 import protos.kaspawalletd_pb2 as pb2
 import grpc
+import os
+from dotenv import load_dotenv
+load_dotenv() 
 
 
 class WalletClient:
     '''Creates a connection with the local wallet.
     '''
-    def __init__(self, url = "localhost:8082"):
+    def __init__(self, url = os.getenv('KASPA_HOST', 'localhost:8082')):
         self.channel = grpc.insecure_channel(url)
         self.stub = gpb2.kaspawalletdStub(self.channel)
     
